@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: tan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .ham{
+  padding: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.container .ham .bar{
+  height: 2px;
+  width: 55px;
+  background-color: black;
+  position: relative;
+}
+.container .ham .bar::after,
+.container .ham .bar::before{
+  content: '';
+  position: absolute;
+  background-color: black;
+  height: 2px;
+  width: 55px;
+  transition: .3s ease-in-out transform;
+}
+.container .ham .bar::before{
+  left: 0;
+  top: -8px;
+}
+.container .ham .bar::after{
+  left: 0;
+  bottom: -8px;
+}
+.container .ham.close .bar::before{
+  top: 0;
+  transform: rotate(45deg);
+}
+.container .ham.close .bar::after{
+  top: 0;
+  transform: rotate(-45deg);
+}
+.container .ham.close .bar{
+  background-color: transparent;
+}
